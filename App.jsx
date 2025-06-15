@@ -15,7 +15,7 @@ export default function App() {
     setAnswer("");
 
     try {
-      const res = await fetch(`${BACKEND_URL}/ask`, {
+      const res = await fetch("https://ai-agent-backend-7utn.onrender.com/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tool, question }),
