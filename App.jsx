@@ -1,3 +1,4 @@
+import { BACKEND_URL } from "./config";
 import { useState } from "react";
 
 const tools = ["SQL", "Excel", "Power BI", "Python", "Tableau", "Looker", "Google Sheets", "Snowflake", "R"];
@@ -14,7 +15,7 @@ export default function App() {
     setAnswer("");
 
     try {
-      const res = await fetch("https://your-backend-url.onrender.com/ask", {
+      const res = await fetch(`${BACKEND_URL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tool, question }),
